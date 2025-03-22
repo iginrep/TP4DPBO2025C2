@@ -134,16 +134,14 @@ public class Menu extends JFrame{
                 String selectedAsaldaerah = mahasiswaTable.getModel().getValueAt(selectedIndex, 4).toString();
 
 
-                // ubah isi textfield dan combo box
-                nimField.setText(selectedNim);
-                namaField.setText(selectedNama);
-                jenisKelaminComboBox.setSelectedItem(selectedJenisKelamin);
-                for (JRadioButton i : asaldaerah )
-                {
-                    if (i.getText().equals(selectedAsaldaerah)){
-                        i.setSelected(true);
-                        break;
+                int index = 0;
+                int flag = 0;
+                while (index < asaldaerah.length && flag == 0) {
+                    if (asaldaerah[index].getText().equals(selectedAsaldaerah)) {
+                        asaldaerah[index].setSelected(true);
+                        flag = 1;
                     }
+                    index++;
                 }
 
                 // ubah button "Add" menjadi "Update"
